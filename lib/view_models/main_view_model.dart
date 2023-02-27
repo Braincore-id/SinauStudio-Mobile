@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sinau_studio/views/course/course_view.dart';
 import 'package:sinau_studio/views/home/home_view.dart';
 import 'package:sinau_studio/views/profile/profile_view.dart';
 
@@ -13,7 +14,7 @@ class MainViewModel extends ChangeNotifier {
 
   List<Widget> screens = [
     const HomeView(),
-    const ProfileView(),
+    const CourseView(),
     const ProfileView(),
     const ProfileView(),
   ];
