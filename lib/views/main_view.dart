@@ -12,8 +12,8 @@ class MainView extends StatelessWidget {
       final dataRef = ref.watch(mainViewModel);
       return Scaffold(
         body: dataRef.screens[dataRef.index],
-        bottomNavigationBar: SizedBox(
-          height: 70,
+        bottomNavigationBar: Container(
+          height: 100,
           child: Theme(
             data: ThemeData(
               splashColor: Colors.transparent,

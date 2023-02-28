@@ -5,6 +5,7 @@ const secondaryColor = Color(0xFFFFA500);
 const yellow = Color(0xFFFFD700);
 const grey = Color(0xFF5B5B5C);
 const lightGrey = Color(0xF7777777);
+const lightGrey2 = Color(0xf6f6f6f6);
 const primaryBlue = Color(0xFF285FE7);
 const greenSuccess = Color(0xFF00CD15);
 const redDanger = Color(0xFFFF151C);

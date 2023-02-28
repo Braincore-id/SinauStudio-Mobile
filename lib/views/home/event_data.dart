@@ -12,7 +12,7 @@ class EventData extends ConsumerWidget {
     final dataRef = ref.watch(homeViewModel);
     final size = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 23, vertical: 20),
       child: Column(
         children: [
           Row(
