@@ -121,12 +121,17 @@ class _CustomHeaderCalendarState extends ConsumerState<CustomHeaderCalendar> {
                           text: DateFormat.MMMM('id_ID')
                               .format(dataRef.weekFocused),
                           style: const TextStyle(
-                              fontSize: 16, color: Colors.black),
+                              fontSize: 16,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w500),
                         ),
                         TextSpan(
                           text: ", ${DateFormat.y().format(dataRef.today)}",
-                          style:
-                              const TextStyle(fontSize: 16, color: lightGrey),
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: lightGrey,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ],
                     ),

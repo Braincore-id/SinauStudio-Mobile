@@ -1,14 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:sinau_studio/utils/colors.dart';
 import 'package:sinau_studio/view_models/home_view_model.dart';
 
-class EventData extends ConsumerWidget {
+class EventData extends ConsumerStatefulWidget {
   const EventData({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<EventData> createState() => _EventDataState();
+}
+
+class _EventDataState extends ConsumerState<EventData> {
+  @override
+  void initState() {
+    initializeDateFormatting('id_ID', null);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final dataRef = ref.watch(homeViewModel);
+      dataRef.checkData(dataRef.today);
+    });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final dataRef = ref.watch(homeViewModel);
     final size = MediaQuery.of(context).size;
     return Padding(
@@ -16,20 +32,20 @@ class EventData extends ConsumerWidget {
       child: Column(
         children: [
           Row(
-            children: const [
+            children: [
               Text(
-                'Hari ini',
-                style: TextStyle(
+                ref.watch(homeViewModel).day,
+                style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(
-                width: 20,
+              const SizedBox(
+                width: 14,
               ),
               Text(
-                '13 Februari 2023',
-                style: TextStyle(
+                DateFormat.yMMMMd('id_ID').format(dataRef.today),
+                style: const TextStyle(
                   color: lightGrey,
                   fontSize: 16,
                   fontWeight: FontWeight.w500,

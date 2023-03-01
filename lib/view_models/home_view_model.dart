@@ -10,9 +10,11 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
   DateTime _weekFocused = DateTime.now();
   DateTime get today => _today;
   DateTime get weekFocused => _weekFocused;
+  String _day = DateFormat.EEEE().format(DateTime.now());
+  String get day => _day;
 
   Map<String, List> eventData = {
-    "02-27": [
+    "2023-02-27": [
       {
         "eventTitle": "Teknik Kompilasi",
         "room": "E426",
@@ -63,7 +65,7 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
         "endDate": DateTime.utc(2023, 02, 27, 12),
       },
     ],
-    "02-26": [
+    "2023-02-26": [
       {
         "eventTitle": "Sistem Basis Data",
         "room": "D222",
@@ -72,7 +74,7 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
         "endDate": DateTime.utc(2023, 02, 27, 2),
       },
     ],
-    "02-14": [
+    "2023-02-14": [
       {
         "eventTitle": "Rekayasa Komputasional",
         "room": "G122",
@@ -90,20 +92,23 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
     // } else {
     //   return [];
     // }
-    return eventData[DateFormat('MM-dd').format(dateTime)] ?? [];
+    return eventData[DateFormat('yyyy-MM-dd').format(dateTime)] ?? [];
   }
 
   void onDaySelected(DateTime selectedDay) {
     if (!isSameDay(selectedDay, selectedDay)) {
       _today = selectedDay;
+      checkData(_today);
     } else {
       _today = selectedDay;
+      checkData(_today);
     }
     notifyListeners();
   }
 
   void onWeekSelected(DateTime selectedDay) {
     _weekFocused = selectedDay;
+    // _day = dataString;
     notifyListeners();
   }
 
@@ -124,6 +129,29 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
   void resetDate() {
     _today = DateTime.now();
     _weekFocused = DateTime.now();
+    checkData(_today);
+    notifyListeners();
+  }
+
+  void checkData(DateTime today) {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final yesterday = DateTime(now.year, now.month, now.day - 1);
+    final tomorrow = DateTime(now.year, now.month, now.day + 1);
+    final aDate = _today;
+
+    if (DateFormat('yyyy-MM-dd').format(aDate) ==
+        DateFormat('yyyy-MM-dd').format(today)) {
+      _day = "Hari Ini";
+    } else if (DateFormat('yyyy-MM-dd').format(aDate) ==
+        DateFormat('yyyy-MM-dd').format(yesterday)) {
+      _day = "Kemarin";
+    } else if (DateFormat('yyyy-MM-dd').format(aDate) ==
+        DateFormat('yyyy-MM-dd').format(tomorrow)) {
+      _day = "Besok";
+    } else {
+      _day = DateFormat.EEEE('id_ID').format(_today);
+    }
     notifyListeners();
   }
 }

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sinau_studio/utils/colors.dart';
+import 'package:sinau_studio/view_models/auth_view_model.dart';
+import 'package:sinau_studio/views/auth/login_view.dart';
 
-class HeaderProfile extends StatelessWidget {
+class HeaderProfile extends ConsumerWidget {
   const HeaderProfile({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -31,8 +34,21 @@ class HeaderProfile extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.logout),
+              onPressed: () async {
+                final result = await ref.watch(authViewModel).logout();
+                if (context.mounted) {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginView(),
+                    ),
+                    (route) => false,
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(result.toString().toString())));
+                }
+              },
+              icon: const Icon(Icons.logout),
             )
           ],
         )
