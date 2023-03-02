@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:sinau_studio/utils/colors.dart';
 
 class CustomProfileDetails extends StatelessWidget {
@@ -23,23 +24,24 @@ class CustomProfileDetails extends StatelessWidget {
                     content: Container(
                       width: 250,
                       height: 250,
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(2),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        border: Border.all(width: 1),
+                        border: Border.all(width: 2),
                         boxShadow: const [
                           BoxShadow(
-                              offset: Offset(0, 3),
-                              color: secondaryColor,
-                              spreadRadius: -1,
-                              blurRadius: 4,
-                              blurStyle: BlurStyle.outer),
+                            offset: Offset(0, 0),
+                            color: yellow,
+                            spreadRadius: 1,
+                            blurRadius: 10,
+                          ),
                         ],
-                        image: const DecorationImage(
-                          fit: BoxFit.fill,
-                          image: NetworkImage(
-                              "https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"),
-                        ),
+                      ),
+                      child: const ProfilePicture(
+                        name: "Pramata Ning",
+                        radius: 0,
+                        fontsize: 30,
+                        random: true,
                       ),
                     ),
                   );
@@ -50,23 +52,24 @@ class CustomProfileDetails extends StatelessWidget {
             child: Container(
               width: 105.0,
               height: 105.0,
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(2),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                border: Border.all(width: 1),
+                border: Border.all(width: 2),
                 boxShadow: const [
                   BoxShadow(
-                      offset: Offset(0, 3),
-                      color: secondaryColor,
-                      spreadRadius: -1,
-                      blurRadius: 4,
-                      blurStyle: BlurStyle.outer),
+                    offset: Offset(0, 0),
+                    color: yellow,
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                  ),
                 ],
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(
-                      "https://d2qp0siotla746.cloudfront.net/img/use-cases/profile-picture/template_3.jpg"),
-                ),
+              ),
+              child: const ProfilePicture(
+                name: "Pramata Ning",
+                radius: 0,
+                fontsize: 30,
+                random: true,
               ),
             ),
           ),
