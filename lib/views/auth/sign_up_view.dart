@@ -41,7 +41,7 @@ class SignUpView extends ConsumerWidget {
                     height: 10,
                   ),
                   const Text(
-                    "Deteksi kefokusan murid",
+                    "Detection of student focus level",
                     style: TextStyle(
                       color: Colors.grey,
                       fontWeight: FontWeight.w500,
@@ -52,37 +52,37 @@ class SignUpView extends ConsumerWidget {
                   ),
                   TextFieldLogin(
                     controller: _nameController,
-                    hintText: "Masukan Nama",
+                    hintText: "Enter your name",
                     isPassword: false,
                     isEmail: false,
-                    message: "Masukan nama dengan benar",
+                    message: "Add name properly",
                   ),
                   const SizedBox(
                     height: 15,
                   ),
                   TextFieldLogin(
                     controller: _emailController,
-                    hintText: "Masukan Email",
+                    hintText: "Enter your email",
                     isPassword: false,
                     isEmail: true,
-                    message: "Masukan email dengan benar",
+                    message: "Please enter a valid email",
                   ),
                   const SizedBox(
                     height: 15,
                   ),
                   TextFieldLogin(
                     controller: _passwordController,
-                    hintText: "Masukan Password",
+                    hintText: "Enter your password",
                     isPassword: true,
                     isEmail: false,
-                    message: "Masukan password dengan benar",
+                    message: "Add password properly",
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   const Spacer(),
                   CustomLoginButton(
-                    buttonName: "Masuk",
+                    buttonName: "Sign Up",
                     onTap: () {
                       final isValidForm = _formKey.currentState!.validate();
                       if (isValidForm) {
@@ -121,13 +121,13 @@ class SignUpView extends ConsumerWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Sudah punya akun?"),
+                      const Text("Already have an account?"),
                       TextButton(
                         onPressed: () {
                           Navigator.pop(context);
                         },
                         child: Text(
-                          "Masuk",
+                          "Sign In",
                           style: TextStyle(
                             fontSize: 14,
                             color: Theme.of(context).primaryColor,

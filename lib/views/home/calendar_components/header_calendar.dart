@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:sinau_studio/utils/colors.dart';
 import 'package:sinau_studio/view_models/home_view_model.dart';
@@ -17,7 +16,6 @@ class CustomHeaderCalendar extends ConsumerStatefulWidget {
 class _CustomHeaderCalendarState extends ConsumerState<CustomHeaderCalendar> {
   @override
   void initState() {
-    initializeDateFormatting('id_ID', null);
     super.initState();
   }
 
@@ -118,7 +116,7 @@ class _CustomHeaderCalendarState extends ConsumerState<CustomHeaderCalendar> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: DateFormat.MMMM('id_ID')
+                          text: DateFormat.MMMM('en_US')
                               .format(dataRef.weekFocused),
                           style: const TextStyle(
                               fontSize: 16,

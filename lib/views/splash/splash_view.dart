@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+// import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sinau_studio/views/auth/login_view.dart';
 import 'package:sinau_studio/views/main_view.dart';
@@ -16,6 +18,13 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
+    initialization(context);
+    // startSplashScreen();
+  }
+
+  Future initialization(BuildContext? context) async {
+    await Future.delayed(const Duration(seconds: 3));
+    FlutterNativeSplash.remove();
     startSplashScreen();
   }
 
@@ -29,8 +38,8 @@ class _SplashViewState extends State<SplashView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: MediaQuery.of(context).size.width * 0.6,
-                height: MediaQuery.of(context).size.height * 0.6,
+                width: MediaQuery.of(context).size.width * 0.24,
+                height: MediaQuery.of(context).size.height * 0.24,
                 child: Image.asset('assets/logo_splash.png'),
               ),
             ],
@@ -40,17 +49,13 @@ class _SplashViewState extends State<SplashView> {
     );
   }
 
-  startSplashScreen() async {
-    var duration = const Duration(seconds: 3);
-    return Timer(duration, () {
-      // final isViewed = context.read<OnBoardingViewModel>().saveIsViewed;
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const LoginView(),
-        ),
-      );
-      checkLogin();
-    });
+  startSplashScreen() {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => const LoginView(),
+      ),
+    );
+    checkLogin();
   }
 
   void checkLogin() async {

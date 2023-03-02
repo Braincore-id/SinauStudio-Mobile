@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:sinau_studio/utils/colors.dart';
 import 'package:sinau_studio/view_models/home_view_model.dart';
@@ -15,7 +14,6 @@ class EventData extends ConsumerStatefulWidget {
 class _EventDataState extends ConsumerState<EventData> {
   @override
   void initState() {
-    initializeDateFormatting('id_ID', null);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final dataRef = ref.watch(homeViewModel);
       dataRef.checkData(dataRef.today);
@@ -44,7 +42,7 @@ class _EventDataState extends ConsumerState<EventData> {
                 width: 14,
               ),
               Text(
-                DateFormat.yMMMMd('id_ID').format(dataRef.today),
+                DateFormat.yMMMMd('en_US').format(dataRef.today),
                 style: const TextStyle(
                   color: lightGrey,
                   fontSize: 16,
@@ -160,7 +158,7 @@ class _EventDataState extends ConsumerState<EventData> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: SizedBox(
-                            width: 42,
+                            width: 50,
                             child: Text(
                               eventDatas["room"],
                               style: const TextStyle(

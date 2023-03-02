@@ -12,7 +12,7 @@ class MainView extends StatelessWidget {
       final dataRef = ref.watch(mainViewModel);
       return Scaffold(
         body: dataRef.screens[dataRef.index],
-        bottomNavigationBar: Container(
+        bottomNavigationBar: SizedBox(
           height: 100,
           child: Theme(
             data: ThemeData(
@@ -34,14 +34,14 @@ class MainView extends StatelessWidget {
                       Icons.home,
                       size: 30,
                     ),
-                    label: "Beranda",
+                    label: "Home",
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(
                       Icons.library_books,
                       size: 30,
                     ),
-                    label: "Kursusku",
+                    label: "Course",
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(

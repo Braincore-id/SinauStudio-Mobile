@@ -142,15 +142,15 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
 
     if (DateFormat('yyyy-MM-dd').format(aDate) ==
         DateFormat('yyyy-MM-dd').format(today)) {
-      _day = "Hari Ini";
+      _day = "Today";
     } else if (DateFormat('yyyy-MM-dd').format(aDate) ==
         DateFormat('yyyy-MM-dd').format(yesterday)) {
-      _day = "Kemarin";
+      _day = "Yesterday";
     } else if (DateFormat('yyyy-MM-dd').format(aDate) ==
         DateFormat('yyyy-MM-dd').format(tomorrow)) {
-      _day = "Besok";
+      _day = "Tomorrow";
     } else {
-      _day = DateFormat.EEEE('id_ID').format(_today);
+      _day = DateFormat.EEEE('en_US').format(_today);
     }
     notifyListeners();
   }

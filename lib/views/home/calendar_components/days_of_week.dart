@@ -5,20 +5,20 @@ class CustomDaysOfWeek extends StatelessWidget {
   CustomDaysOfWeek({super.key});
 
   List day = [
-    "Sen",
-    "Sel",
-    "Rab",
-    "Kam",
-    "Jum",
-    "Sab",
-    "Min",
+    "Mon",
+    "Tue",
+    "Web",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun",
   ];
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: size.width * 0.034),
+      padding: EdgeInsets.symmetric(horizontal: size.width * 0.044),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(

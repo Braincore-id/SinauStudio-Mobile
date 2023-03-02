@@ -36,7 +36,7 @@ class LoginView extends ConsumerWidget {
                   flex: 2,
                 ),
                 Text(
-                  "Notula Notes",
+                  "Sinau Studio",
                   style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontSize: 40,
@@ -46,7 +46,7 @@ class LoginView extends ConsumerWidget {
                   height: 10,
                 ),
                 const Text(
-                  "Deteksi kefokusan murid",
+                  "Detection of student focus level",
                   style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -55,9 +55,9 @@ class LoginView extends ConsumerWidget {
                 const Spacer(),
                 TextFieldLogin(
                   controller: emailController,
-                  hintText: "Masukan Email",
+                  hintText: "Enter your email",
                   isPassword: false,
-                  message: "Masukan email dengan benar",
+                  message: "Please enter a valid email",
                   isEmail: true,
                 ),
                 const SizedBox(
@@ -65,9 +65,9 @@ class LoginView extends ConsumerWidget {
                 ),
                 TextFieldLogin(
                   controller: passwordController,
-                  hintText: "Masukan Password",
+                  hintText: "Enter your password",
                   isPassword: true,
-                  message: "Masukan password dengan benar",
+                  message: "Add password properly",
                   isEmail: false,
                 ),
                 const SizedBox(
@@ -91,7 +91,7 @@ class LoginView extends ConsumerWidget {
                         child: Container(
                           alignment: Alignment.centerRight,
                           child: const Text(
-                            'Lupa Password ?',
+                            'Forgot Password?',
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontWeight: FontWeight.w600),
@@ -180,7 +180,7 @@ class LoginView extends ConsumerWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text("Belum punya akun?"),
+                    const Text("Do not have an account?"),
                     TextButton(
                       onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute(
@@ -188,7 +188,7 @@ class LoginView extends ConsumerWidget {
                         ),
                       ),
                       child: Text(
-                        "Daftar",
+                        "Create One",
                         style: TextStyle(
                             fontSize: 14,
                             color: Theme.of(context).primaryColor,

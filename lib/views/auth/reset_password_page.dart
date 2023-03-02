@@ -32,7 +32,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   flex: 2,
                 ),
                 Text(
-                  "Notula Notes",
+                  "Sinau Studio",
                   style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontSize: 40,
@@ -42,7 +42,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   height: 10,
                 ),
                 const Text(
-                  "Notula made easy",
+                  "Detection of student focus level",
                   style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
@@ -51,7 +51,7 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 const Spacer(),
                 TextFieldLogin(
                   controller: emailController,
-                  hintText: "Enter Email",
+                  hintText: "Enter your email",
                   isPassword: false,
                   message: "Please enter a valid email",
                   isEmail: true,
