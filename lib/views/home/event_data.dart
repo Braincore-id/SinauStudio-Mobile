@@ -120,10 +120,14 @@ class _EventDataState extends ConsumerState<EventData> {
                                         const SizedBox(
                                           width: 6,
                                         ),
-                                        const Text(
-                                          "Offline",
+                                        Text(
+                                          eventDatas["isOnline"]
+                                              ? "Online"
+                                              : "Offline",
                                           style: TextStyle(
-                                            color: lightGrey,
+                                            color: eventDatas["isOnline"]
+                                                ? greenSuccess
+                                                : lightGrey,
                                             fontSize: 12,
                                           ),
                                         ),

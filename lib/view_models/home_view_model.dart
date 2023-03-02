@@ -21,6 +21,7 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
         "lecture": "Dr. Bambang",
         "startDate": DateTime.utc(2023, 02, 27, 8),
         "endDate": DateTime.utc(2023, 02, 27, 9),
+        "isOnline": false
       },
       {
         "eventTitle": "Algoritma & Pemrograman 1A",
@@ -28,41 +29,23 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
         "lecture": "Dr. Audrey",
         "startDate": DateTime.utc(2023, 02, 27, 10),
         "endDate": DateTime.utc(2023, 02, 27, 12),
+        "isOnline": false
       },
       {
-        "eventTitle": "Algoritma & Pemrograman 1A",
-        "room": "E426",
-        "lecture": "Dr. Audrey",
-        "startDate": DateTime.utc(2023, 02, 27, 10),
-        "endDate": DateTime.utc(2023, 02, 27, 12),
+        "eventTitle": "Sistem Berkas",
+        "room": "E224",
+        "lecture": "Dr. Ridwan",
+        "startDate": DateTime.utc(2023, 02, 27, 14),
+        "endDate": DateTime.utc(2023, 02, 27, 15),
+        "isOnline": true
       },
       {
-        "eventTitle": "Algoritma & Pemrograman 1A",
-        "room": "E426",
-        "lecture": "Dr. Audrey",
-        "startDate": DateTime.utc(2023, 02, 27, 10),
-        "endDate": DateTime.utc(2023, 02, 27, 12),
-      },
-      {
-        "eventTitle": "Algoritma & Pemrograman 1A",
-        "room": "E426",
-        "lecture": "Dr. Audrey",
-        "startDate": DateTime.utc(2023, 02, 27, 10),
-        "endDate": DateTime.utc(2023, 02, 27, 12),
-      },
-      {
-        "eventTitle": "Algoritma & Pemrograman 1A",
-        "room": "E426",
-        "lecture": "Dr. Audrey",
-        "startDate": DateTime.utc(2023, 02, 27, 10),
-        "endDate": DateTime.utc(2023, 02, 27, 12),
-      },
-      {
-        "eventTitle": "Algoritma & Pemrograman 1A",
-        "room": "E426",
-        "lecture": "Dr. Audrey",
-        "startDate": DateTime.utc(2023, 02, 27, 10),
-        "endDate": DateTime.utc(2023, 02, 27, 12),
+        "eventTitle": "Pemrograman Web",
+        "room": "E224",
+        "lecture": "Dr. Priyo",
+        "startDate": DateTime.utc(2023, 02, 27, 16),
+        "endDate": DateTime.utc(2023, 02, 27, 17),
+        "isOnline": true
       },
     ],
     "2023-02-26": [
@@ -70,19 +53,59 @@ class HomeViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
         "eventTitle": "Sistem Basis Data",
         "room": "D222",
         "lecture": "Dr. Pardede",
-        "startDate": DateTime.utc(2023, 02, 27, 1),
-        "endDate": DateTime.utc(2023, 02, 27, 2),
+        "startDate": DateTime.utc(2023, 02, 26, 1),
+        "endDate": DateTime.utc(2023, 02, 26, 2),
+        "isOnline": true
       },
     ],
     "2023-02-14": [
       {
-        "eventTitle": "Rekayasa Komputasional",
+        "eventTitle": "Statistika",
         "room": "G122",
         "lecture": "Dr. Mufid",
-        "startDate": DateTime.utc(2023, 02, 27, 1),
-        "endDate": DateTime.utc(2023, 02, 27, 2),
+        "startDate": DateTime.utc(2023, 02, 14, 1),
+        "endDate": DateTime.utc(2023, 02, 14, 2),
+        "isOnline": true
       },
-    ]
+    ],
+    "2023-03-02": [
+      {
+        "eventTitle": "Terapan Teori Graf",
+        "room": "G122",
+        "lecture": "Dr. Andy",
+        "startDate": DateTime.utc(2023, 03, 02, 1),
+        "endDate": DateTime.utc(2023, 03, 02, 2),
+        "isOnline": true
+      },
+    ],
+    "2023-03-03": [
+      {
+        "eventTitle": "Matematika Dasar 1",
+        "room": "G122",
+        "lecture": "Dr. Syaiful",
+        "startDate": DateTime.utc(2023, 03, 03, 1),
+        "endDate": DateTime.utc(2023, 03, 03, 2),
+        "isOnline": false
+      },
+      {
+        "eventTitle": "Kecerdasan Buatan",
+        "room": "G122",
+        "lecture": "Dr. Cecep",
+        "startDate": DateTime.utc(2023, 03, 03, 1),
+        "endDate": DateTime.utc(2023, 03, 03, 2),
+        "isOnline": false
+      },
+    ],
+    "2023-03-04": [
+      {
+        "eventTitle": "Rekayasa Perangkat Lunak",
+        "room": "G122",
+        "lecture": "Dr. Asep",
+        "startDate": DateTime.utc(2023, 03, 04, 1),
+        "endDate": DateTime.utc(2023, 03, 04, 2),
+        "isOnline": true
+      },
+    ],
   };
 
   List<dynamic> listOfDayEvents(DateTime dateTime) {

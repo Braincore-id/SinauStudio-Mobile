@@ -26,23 +26,16 @@ class _CourseViewState extends State<CourseView>
     return SafeArea(
       child: Scaffold(
         body: Column(
-          children: [
-            const SearchBarUserCourse(
+          children: const [
+            SearchBarUserCourse(
               hintText: "Find Courses",
             ),
-            const SizedBox(
+            SizedBox(
               height: 8,
             ),
             Expanded(
-                child: Column(
-              children: List.generate(
-                2,
-                (index) => const ListCourseCard(
-                  status: 'ongoing',
-                  isOngoing: true,
-                ),
-              ),
-            ))
+              child: ListCourseCard(),
+            )
           ],
         ),
       ),
