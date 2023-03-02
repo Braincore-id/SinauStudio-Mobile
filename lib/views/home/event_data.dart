@@ -160,7 +160,7 @@ class _EventDataState extends ConsumerState<EventData> {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          padding: const EdgeInsets.symmetric(horizontal: 12),
                           child: SizedBox(
                             width: 50,
                             child: Text(

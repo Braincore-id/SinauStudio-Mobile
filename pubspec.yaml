@@ -38,6 +38,7 @@ dependencies:
   flutter_profile_picture: ^2.0.0
   flutter_riverpod: ^2.2.0
   intl: ^0.18.0
+  permission_handler: ^10.2.0
   shared_preferences: ^2.0.18
   table_calendar: ^3.0.9
 

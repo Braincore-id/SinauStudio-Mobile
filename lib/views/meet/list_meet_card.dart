@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:sinau_studio/utils/colors.dart';
 import 'package:sinau_studio/view_models/meet_view_model.dart';
+import 'package:sinau_studio/views/web_view/web_view.dart';
 
 class ListMeetCard extends StatelessWidget {
   const ListMeetCard({super.key});
@@ -74,7 +75,12 @@ class ListMeetCard extends StatelessWidget {
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: primaryColor,
                                   ),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                      builder: (context) => const MeetWebView(),
+                                    ));
+                                  },
                                   child: const Text(
                                     "Link Meet",
                                     style: TextStyle(

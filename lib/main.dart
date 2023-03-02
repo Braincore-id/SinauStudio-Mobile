@@ -4,9 +4,15 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sinau_studio/views/splash_view.dart';
 
-void main() {
+Future main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
+  // TODO Access Permission
+  // await Permission.camera.request();
+  // await Permission.mediaLibrary.request();
+  // await Permission.photos.request();
+  // await Permission.storage.request();
   runApp(
     const ProviderScope(
       child: MyApp(),
