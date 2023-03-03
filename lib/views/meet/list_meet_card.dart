@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:sinau_studio/utils/colors.dart';
 import 'package:sinau_studio/view_models/meet_view_model.dart';
 import 'package:sinau_studio/views/web_view/web_view.dart';
@@ -75,7 +76,12 @@ class ListMeetCard extends StatelessWidget {
                                   style: ElevatedButton.styleFrom(
                                     backgroundColor: primaryColor,
                                   ),
-                                  onPressed: () {
+                                  onPressed: () async {
+                                    await Permission.camera.request();
+                                    await Permission.mediaLibrary.request();
+                                    await Permission.photos.request();
+                                    await Permission.storage.request();
+                                    await Permission.microphone.request();
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(
                                       builder: (context) => const MeetWebView(),

@@ -17,22 +17,31 @@ class _MeetWebViewState extends State<MeetWebView> {
         title: const Text("Web View"),
       ),
       body: InAppWebView(
-          initialUrlRequest: URLRequest(url: Uri.parse("https://flutter.dev")),
-          initialOptions: InAppWebViewGroupOptions(
-            crossPlatform: InAppWebViewOptions(
-              mediaPlaybackRequiresUserGesture: false,
-              // debuggingEnabled: true,
-            ),
+        initialUrlRequest:
+            URLRequest(url: Uri.parse("https://meet.jit.si/testjitsi")),
+        initialOptions: InAppWebViewGroupOptions(
+          android: AndroidInAppWebViewOptions(
+            useHybridComposition: true,
           ),
-          onWebViewCreated: (InAppWebViewController controller) {
-            _webViewController = controller;
-          },
-          androidOnPermissionRequest: (InAppWebViewController controller,
-              String origin, List<String> resources) async {
-            return PermissionRequestResponse(
-                resources: resources,
-                action: PermissionRequestResponseAction.GRANT);
-          }),
+          ios: IOSInAppWebViewOptions(
+              // allowsInlineMediaPlayback: true,
+              ),
+          crossPlatform: InAppWebViewOptions(
+            mediaPlaybackRequiresUserGesture: false,
+            // debuggingEnabled: true,
+          ),
+        ),
+        onWebViewCreated: (InAppWebViewController controller) {
+          _webViewController = controller;
+        },
+        androidOnPermissionRequest: (InAppWebViewController controller,
+            String origin, List<String> resources) async {
+          return PermissionRequestResponse(
+            resources: resources,
+            action: PermissionRequestResponseAction.GRANT,
+          );
+        },
+      ),
     );
   }
 }
