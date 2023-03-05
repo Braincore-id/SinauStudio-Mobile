@@ -17,8 +17,9 @@ class _MeetWebViewState extends State<MeetWebView> {
         title: const Text("Web View"),
       ),
       body: InAppWebView(
-        initialUrlRequest:
-            URLRequest(url: Uri.parse("https://meet.jit.si/testjitsi")),
+        initialUrlRequest: URLRequest(
+          url: Uri.parse("https://s.id/sinau_meet"),
+        ),
         initialOptions: InAppWebViewGroupOptions(
           android: AndroidInAppWebViewOptions(
             useHybridComposition: true,

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:sinau_studio/utils/colors.dart';
@@ -38,7 +37,7 @@ class CustomProfileDetails extends StatelessWidget {
                         ],
                       ),
                       child: const ProfilePicture(
-                        name: "Pramata Ning",
+                        name: "Eric Julianto",
                         radius: 0,
                         fontsize: 30,
                         random: true,
@@ -66,7 +65,7 @@ class CustomProfileDetails extends StatelessWidget {
                 ],
               ),
               child: const ProfilePicture(
-                name: "Pramata Ning",
+                name: "Eric Julianto",
                 radius: 0,
                 fontsize: 30,
                 random: true,
@@ -75,7 +74,7 @@ class CustomProfileDetails extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           const Text(
-            "Pramata Ning",
+            "Eric Julianto",
             style: TextStyle(
               color: Colors.black,
               fontSize: 23,

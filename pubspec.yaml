@@ -46,6 +46,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.12.0
 
 flutter_native_splash:
   color: "#ffffff"
@@ -58,6 +59,12 @@ flutter_native_splash:
   android: true
   android12: true
   ios: true
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo_splash.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:sinau_studio/utils/colors.dart';
+import 'package:sinau_studio/utils/constant/url_constant.dart';
 import 'package:sinau_studio/view_models/meet_view_model.dart';
 import 'package:sinau_studio/views/web_view/web_view.dart';
 
@@ -33,7 +34,7 @@ class ListMeetCard extends StatelessWidget {
                     width: 120,
                     child: Image.network(
                       dataRef.dataMeet[index].linkImage ??
-                          "https://i.ibb.co/dKsDmpL/no-image.png",
+                          UrlConstant.imageNotFound,
                       fit: BoxFit.cover,
                     ),
                   ),

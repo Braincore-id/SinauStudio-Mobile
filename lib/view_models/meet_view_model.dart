@@ -15,11 +15,12 @@ class MeetViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
           "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
     ),
     MeetModel(
-      headerMeet: "Rekayasa Perangkat Lunak",
-      dateMeet: DateTime.utc(2023, 3, 8),
-      lecture: "Dr. Fitrianingsih",
-      urlMeet: "asdasdasdad",
-    ),
+        headerMeet: "Rekayasa Perangkat Lunak",
+        dateMeet: DateTime.utc(2023, 3, 8),
+        lecture: "Dr. Fitrianingsih",
+        urlMeet: "asdasdasdad",
+        linkImage:
+            "https://smkn4kendari.sch.id/wp-content/uploads/2021/05/RPL-760x490-1.jpg"),
     MeetModel(
       headerMeet: "Teknik Kompilasi",
       dateMeet: DateTime.utc(2023, 3, 10),

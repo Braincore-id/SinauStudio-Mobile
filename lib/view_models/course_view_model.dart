@@ -14,10 +14,11 @@ class CourseViewModel extends ChangeNotifier with FiniteState, ErrorMessage {
       offlineRoom: "E426",
     ),
     CourseModel(
-      headerMeet: "Rekayasa Perangkat Lunak",
-      lecture: "Dr. Fitrianingsih",
-      offlineRoom: "D222",
-    ),
+        headerMeet: "Rekayasa Perangkat Lunak",
+        lecture: "Dr. Fitrianingsih",
+        offlineRoom: "D222",
+        linkImage:
+            "https://smkn4kendari.sch.id/wp-content/uploads/2021/05/RPL-760x490-1.jpg"),
     CourseModel(
       headerMeet: "Teknik Kompilasi",
       lecture: "Dr. Mufid",
